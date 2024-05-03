@@ -3,11 +3,14 @@ import { Inter as FontSans } from "next/font/google"
 import { cn } from "@/lib/utils"
 
 import "./globals.css";
+import Providers from "@/components/providers";
 
 const fontSans = FontSans({
   subsets: ["latin"],
   variable: "--font-sans",
 })
+
+const bodyClass = cn("min-h-screen bg-background font-sans antialiased", fontSans.variable)
 
 export const metadata: Metadata = {
   title: "Create Next App",
@@ -21,14 +24,11 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body
-        className={cn(
-          "min-h-screen bg-background font-sans antialiased",
-          fontSans.variable
-        )}
-      >
-        {children}
-        </body>
+      <body className={bodyClass}>
+        <Providers>
+          {children}
+        </Providers>
+      </body>
     </html>
   );
 }
