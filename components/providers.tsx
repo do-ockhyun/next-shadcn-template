@@ -1,12 +1,12 @@
 
 type ProvidersProps = {
-    children: React.ReactNode;
+  children: React.ReactNode;
 };
 
 function Providers({
-    children,
+  children,
 }: ProvidersProps) {
-    return ( <>{children}</> );
+  return (<>{children}</>);
 }
 
 export default Providers;
