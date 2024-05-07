@@ -1,47 +1,54 @@
 import {
-  Bell,
   Home,
   LineChart,
+  LucideIcon,
   Package,
-  Package2,
   ShoppingCart,
   Users,
 } from "lucide-react"
 
+export type Icon = LucideIcon;
+
+export const Icons = {
+  home: Home,
+  shoppingcart: ShoppingCart,
+  package: Package,
+  users: Users,
+  lineChart: LineChart,
+}
+
 export interface Menu {
   href: string;
   name: string;
-  icon: any;
-  active?: boolean;
+  icon: keyof typeof Icons;
   bagde?: number;
 }
 
 export const menuItems: Menu[] = [
   {
-    href: "#",
+    href: "/",
     name: "Dashboard",
-    icon: Home,
-    active: true,
+    icon: 'home',
   },
   {
-    href: "#",
+    href: "/orders",
     name: "Orders",
-    icon: ShoppingCart,
+    icon: 'shoppingcart',
     bagde: 9,
   },
   {
     href: "#",
     name: "Products",
-    icon: Package,
+    icon: 'package',
   },
   {
     href: "#",
     name: "Customers",
-    icon: Users,
+    icon: 'users',
   },
   {
     href: "#",
     name: "Analytics",
-    icon: LineChart,
+    icon: 'lineChart',
   },
 ]
